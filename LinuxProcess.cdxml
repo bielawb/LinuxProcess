@@ -1,0 +1,86 @@
+﻿<PowerShellMetadata xmlns="http://schemas.microsoft.com/cmdlets-over-objects/2009/11">
+<Class ClassName="root/cimv2/Lin_Process">
+    <Version>0.1.0.0</Version>    
+    <DefaultNoun>LinProcess</DefaultNoun>
+    <InstanceCmdlets>
+        <GetCmdletParameters />
+        <GetCmdlet>
+            <CmdletMetadata Verb="Get" HelpUri="http://becomelotr.wordpress.com/2013/06/30/managing-linux-via-omi-packaging/" />
+            <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+            <QueryableProperties>
+                <Property PropertyName="Name">
+                    <Type PSType="string" />
+                    <RegularQuery AllowGlobbing="true">
+                        <CmdletParameterMetadata IsMandatory="false" Position="0"
+                            ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName" />
+                    </RegularQuery>
+                </Property>
+                <Property PropertyName="PID">
+                    <Type PSType="uint32" />
+                    <RegularQuery>
+                        <CmdletParameterMetadata IsMandatory="true" Aliases="ID ProcessID"
+                            CmdletParameterSets="ById" />
+                    </RegularQuery>
+                </Property>
+                <Property PropertyName="State">
+                    <Type PSType="string" />
+                    <RegularQuery>
+                        <CmdletParameterMetadata IsMandatory="false"
+                            CmdletParameterSets="ById ByName">
+                            <ValidateSet>
+                                <AllowedValue>D</AllowedValue>
+                                <AllowedValue>R</AllowedValue>
+                                <AllowedValue>S</AllowedValue>
+                                <AllowedValue>T</AllowedValue>
+                                <AllowedValue>W</AllowedValue>
+                                <AllowedValue>X</AllowedValue>
+                                <AllowedValue>Z</AllowedValue>
+                            </ValidateSet>
+                        </CmdletParameterMetadata>
+                    </RegularQuery>
+                </Property>
+            </QueryableProperties>
+        </GetCmdletParameters>
+        </GetCmdlet>      
+        <Cmdlet>
+        <CmdletMetadata Verb="Stop" ConfirmImpact="Medium"/>
+        <Method MethodName="Kill">
+          <Parameters>
+            <Parameter ParameterName="CmdletOutput">
+              <Type PSType="Microsoft.Management.Infrastructure.CimInstance" />
+              <CmdletOutputMetadata />
+            </Parameter>
+            <Parameter ParameterName="sig">
+              <Type PSType="Uint32"/>
+              <CmdletParameterMetadata IsMandatory="false" Position="1">
+                <ValidateNotNull />
+                <ValidateNotNullOrEmpty />
+              </CmdletParameterMetadata>
+            </Parameter>
+          </Parameters>
+        </Method>
+        <GetCmdletParameters DefaultCmdletParameterSet="ByName">
+        <QueryableProperties>
+          <Property PropertyName="Name">
+            <Type PSType="string" />
+            <RegularQuery AllowGlobbing="true">
+              <CmdletParameterMetadata IsMandatory="true" Position="0"
+                  ValueFromPipelineByPropertyName="true" CmdletParameterSets="ByName" />
+            </RegularQuery>
+          </Property>
+          <Property PropertyName="PID">
+            <Type PSType="uint32" />
+            <RegularQuery>
+              <CmdletParameterMetadata IsMandatory="true" Aliases="ID ProcessID"
+                 ValueFromPipelineByPropertyName="true" CmdletParameterSets="ById" />
+            </RegularQuery>
+          </Property>
+        </QueryableProperties>
+        </GetCmdletParameters>
+      </Cmdlet>
+    </InstanceCmdlets>
+    <CmdletAdapterPrivateData>
+        <Data Name="ClientSideShouldProcess" />
+    </CmdletAdapterPrivateData>
+</Class>
+</PowerShellMetadata>

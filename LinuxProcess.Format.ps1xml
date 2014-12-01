@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+    <ViewDefinitions>
+        <View>
+            <Name>LinProcess</Name>
+            <ViewSelectedBy>
+                <TypeName>Microsoft.Management.Infrastructure.CimInstance#Lin_Process</TypeName>
+            </ViewSelectedBy>
+            <TableControl>
+                <TableHeaders>
+                    <TableColumnHeader>
+                        <Width>20</Width> <!-- Name     -->
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Width>9</Width>  <!-- PID      -->
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Width>9</Width>  <!-- ParentID --> 
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Width>12</Width> <!-- VmSize   --> 
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                    	  <Width>12</Width> <!-- VmHWM    --> 
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                    	  <Width>50</Width> <!-- Cmdline  --> 
+                    </TableColumnHeader>
+                </TableHeaders>
+                <TableRowEntries>
+                    <TableRowEntry>
+                    	<TableColumnItems>
+                    		<TableColumnItem>
+                    			<PropertyName>Name</PropertyName>
+                    		</TableColumnItem>
+                    		<TableColumnItem>
+                    			<PropertyName>PID</PropertyName>
+                    		</TableColumnItem>
+                    		<TableColumnItem>
+                    			<PropertyName>ParentID</PropertyName>
+                    		</TableColumnItem>
+                    		<TableColumnItem>
+                    			<PropertyName>VmSize</PropertyName>
+                    		</TableColumnItem>
+                    		<TableColumnItem>
+                    			<PropertyName>VmHWM</PropertyName>
+                    		</TableColumnItem>
+                    		<TableColumnItem>
+                    			<PropertyName>Cmdline</PropertyName>
+                    		</TableColumnItem>
+                    	</TableColumnItems>
+                    </TableRowEntry>
+                </TableRowEntries>
+            </TableControl>
+        </View>
+    </ViewDefinitions>
+</Configuration>
